@@ -1,9 +1,10 @@
+
 #include<iostream>
 using namespace std;
 void BinarySearch(int arr[],int key,int);
 int main()
 {
-	int n,key=0;
+	int temp=0,n,key=0;
 	cout << "\nEnter the number of values: ";
 	cin >> n;
 	int* arr = new int[n];
@@ -12,6 +13,18 @@ int main()
 		cin >> arr[i];
 	for (int i = 0; i < n; i++)
 		cout << arr[i] << " ";
+	for(int i=0;i<n;i++)
+	{
+		for(int j=0;j<i;j++)
+		{
+			if(arr[i]<arr[j])
+			{
+				temp=arr[i];
+				arr[j]=arr[i];
+				arr[j]=temp;
+			}
+		}
+	}
 	cout << "Key: ";
 	cin >> key;
 	BinarySearch(arr, key,n);
