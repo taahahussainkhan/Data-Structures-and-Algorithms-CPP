@@ -54,12 +54,21 @@ public:
 };
 int main()
 {
-    myStack s(20);
-    s.push(3);
-    s.push(4);
-    s.push(5);
-    cout << s.pop();
-    cout << s.pop();
-    cout << s.pop();
-    s.display();
+
+    myStack obj ;
+    int n;
+    for(int i=0;i<5;i++)
+        {
+            cin>>n;
+            obj.push(n);
+        }
+    for (int i = 0; i < 5; i++)
+    {
+        /* code */
+        cout<<obj.pop()<<" ";
+    }
+    obj.display();
+    
+    
+  
 }
