@@ -1,74 +1,83 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
-class Stack
-{
-protected:
-    int *arr;
-    int currentSize;
-    int maximumSize;
-
+class Stack {
+    int top;
+    int* arr;
+    int size;
 public:
-    Stack()
+    Stack(){
+            top=-1;
+            arr=new int[10];
+            size=10;
+    };
+    Stack(int size)
     {
-        maximumSize = 10;
-        currentSize = 0;
-        arr = new int[maximumSize];
+        this->size=size;
+        top=-1;
+        arr=new int[size];
     }
-    Stack(int s)
+    bool isEmpty()
     {
-        maximumSize = s;
-        currentSize = 0;
-        arr = new int[maximumSize];
+        return top==-1;
     }
-    virtual void push(int n) = 0;
-    virtual int pop() = 0;
-    virtual void display() = 0;
-};
-class myStack : public Stack
-{
-public:
-    myStack() : Stack()
+    bool isFull()
     {
+        return top==10;
     }
-    myStack(int s) : Stack(s)
+    void push(int value)
     {
-    }
-    void push(int n)
-    {
-        arr[currentSize] = n;
-        currentSize++;
+        if(!isFull())
+        {
+            top++;
+            arr[top]=value;
+           
+        }
+        else
+        cout<<"Stack Overflow!"<<endl;
     }
     int pop()
     {
-        currentSize--;
-        return arr[currentSize];
+        if(!isEmpty())
+        {
+            int popValue=arr[top];
+            arr[top]=0;
+            top--;
+            return popValue;
+             
+        }
+        else
+        cout<<"Stack Underflow!"<<endl;
     }
     void display()
     {
-        cout << "Maximum Size: " << maximumSize << endl;
-        cout << "Current Size: " << currentSize << endl;
-        cout << "Values: " << endl;
-        for (int i = 0; i < currentSize; i++)
-            cout << arr[i] << " ";
+        for(int i=0;i<=top;i++)
+        cout<<arr[i]<<endl;
+    }
+    int peek(int position)
+    {
+        if(!isEmpty())
+            return arr[position];
+        else
+            cout<<"Stack Underflow!"<<endl;
+    }
+    void change(int position,int value)
+    {
+        arr[position]=value;
+        cout<<"Value changed!"<<endl;
+    }
+    int count()
+    {
+        return top+1;
     }
 };
-int main()
+int main ()
 {
-
-    myStack obj ;
-    int n;
-    for(int i=0;i<5;i++)
-        {
-            cin>>n;
-            obj.push(n);
-        }
-    for (int i = 0; i < 5; i++)
-    {
-        /* code */
-        cout<<obj.pop()<<" ";
-    }
-    obj.display();
-    
-    
-  
+    Stack s(7);
+    s.push(5);
+    s.push(3);
+    s.push(4);
+    s.push(1);
+    s.pop();
+    s.display();
+   
 }
