@@ -1,8 +1,11 @@
+
 #include <iostream>
+#define SIZE 10
 using namespace std;
+template <class type>
 class Queue
 {
-    int *arr;
+    type *arr;
     int front;
     int rear;
     int size; // Size for dynamic array
@@ -12,7 +15,7 @@ public:
     {
         rear = -1;
         front = -1;
-        arr = new int[10];
+        arr = new type[SIZE];
     }
     // Parametrized Constructor
     Queue(int size)
@@ -20,7 +23,7 @@ public:
         this->size = size;
         front = -1;
         rear = -1;
-        arr = new int[size];
+        arr = new type[size];
     }
     // Function to check if the Queue is full or not.
     bool isFull()
@@ -32,7 +35,7 @@ public:
         return rear == -1 && front == -1;
     }
     // enQueue function to perform enqueue operation on queue.
-    void enQueue(int value)
+    void enQueue(type value)
     {
         if (isFull())
             cout << "Queue Overflow!" << endl;
@@ -42,9 +45,9 @@ public:
             rear++;
         arr[rear] = value;
     }
-    int deQueue()
+    type deQueue()
     {
-        int dq;
+        type dq;
         if (isEmpty())
             cout << "Queue Underflow!" << endl;
 
@@ -73,7 +76,7 @@ void menu()
 {
     int choice,en,de;
     bool flag=true;
-    Queue q(10);
+    Queue<int> q(10);
     char oper;
     do{       
     cout<<"Enqueue."<<endl;
@@ -82,7 +85,7 @@ void menu()
     cout<<"Empty."<<endl;
     cout<<"Full."<<endl;
     cin>>choice;
-    switch (choice){
+    switch (choice) {
         case 1:
         cout<<"Enter value to enqueue: ";
         cin>>en;
@@ -115,9 +118,9 @@ void menu()
     flag=true;
     else
     flag=false;
-    }while(flag);
+    } while(flag);
 }
-int main()
+int main ()
 {
     menu();
     system("pause");
