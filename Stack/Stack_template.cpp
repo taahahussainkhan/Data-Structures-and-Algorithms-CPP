@@ -80,5 +80,12 @@ int main ()
     s.push(1);
     s.pop();
     s.display();
+    Stack<char> s1(7);
+    s1.push('3');
+    s1.push('f');
+    s1.push('d');
+    s1.push('v');
+    s1.pop();
+    s1.display();
    
 }
