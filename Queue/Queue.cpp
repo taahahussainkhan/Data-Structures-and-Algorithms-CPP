@@ -50,7 +50,7 @@ public:
 
         else if (rear == front) // Only first case when rear and front will be incremented, this step is applicable only first time.
         {
-            dq = arr[front]; // As front and rear are both equal, so here in the [ ], we can put either rear or front.
+            dq = arr[front]; // As int the case of Queue it's front-in-front-out, so deQueue operation is done athe the front.
             rear = -1;
             front = -1;
             return dq;
