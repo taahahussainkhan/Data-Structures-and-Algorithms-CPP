@@ -1,19 +1,29 @@
-<font size="6">Data Structures and Algorithms in C++</font>
-This is a repository containing various data structures and algorithms implemented in C++. It's intended for those who are interested in learning or practicing data structures and algorithms concepts.
+# DSA C++ Solutions
 
-Content
-The repository is divided into different folders, each one containing implementations of a particular data structure or algorithm. The folders are:
+This repository contains my solutions to various data structures and algorithms problems using C++.
 
-Arrays: Contains implementations of various operations on arrays such as sorting, searching, and basic operations.
-Linked List: Contains implementations of different types of linked lists such as singly linked lists, doubly linked lists, and circular linked lists, along with different operations such as insertion, deletion, and reversal.
-Stack: Contains implementations of a stack data structure using an array and a linked list.
-Queue: Contains implementations of a queue data structure using an array and a linked list.
-Trees: Contains implementations of various types of trees such as binary trees, AVL trees, and red-black trees along with different operations such as insertion, deletion, and traversal.
-Graphs: Contains implementations of different types of graphs such as directed and undirected graphs along with different operations such as BFS, DFS, and shortest path algorithms.
-Sorting Algorithms: Contains implementations of various sorting algorithms such as bubble sort, insertion sort, selection sort, merge sort, quick sort, and heap sort.
-Searching Algorithms: Contains implementations of various searching algorithms such as linear search, binary search, and interpolation search.
-Dynamic Programming: Contains implementations of various dynamic programming algorithms such as Fibonacci series, longest common subsequence, and Knapsack problem.
-Getting Started
-To run the programs, you should have a C++ compiler installed on your machine. You can use any C++ compiler such as GCC, Clang, or Visual Studio.
+## Table of Contents
+- [Arrays](#arrays)
+- [Linked Lists](#linked-lists)
+- [Stacks](#stacks)
+- [Queues](#queues)
+- [Trees](#trees)
+- [Graphs](#graphs)
 
-Clone the repository on your local machine using the following command:
+## Arrays
+Arrays are a fundamental data structure that can be used to store a collection of elements. Each element in an array can be accessed using its index, which makes it easy to search for and retrieve specific elements. In this section, you will find solutions to various problems that involve using arrays.
+
+## Linked Lists
+Linked lists are a linear data structure that consists of a sequence of nodes, each containing data and a reference to the next node in the list. Linked lists can be used to implement various abstract data types such as stacks, queues, and associative arrays. In this section, you will find solutions to various problems that involve using linked lists.
+
+## Stacks
+A stack is an abstract data type that follows the Last-In-First-Out (LIFO) principle. This means that the last element added to the stack is the first one to be removed. Stacks can be used to solve various problems such as balancing parentheses and evaluating postfix expressions. In this section, you will find solutions to various problems that involve using stacks.
+
+## Queues
+A queue is an abstract data type that follows the First-In-First-Out (FIFO) principle. This means that the first element added to the queue is the first one to be removed. Queues can be used to solve various problems such as implementing a cache or a buffer. In this section, you will find solutions to various problems that involve using queues.
+
+## Trees
+A tree is a hierarchical data structure that consists of nodes connected by edges. Each node in a tree has a parent node and zero or more child nodes. Trees can be used to represent hierarchical relationships between elements and to solve various problems such as searching and sorting. In this section, you will find solutions to various problems that involve using trees.
+
+## Graphs
+A graph is a data structure that consists of nodes connected by edges. Graphs can be used to represent relationships between elements and to solve various problems such as finding the shortest path between two nodes or detecting cycles in a graph. In this section, you will find solutions to various problems that involve using graphs.
