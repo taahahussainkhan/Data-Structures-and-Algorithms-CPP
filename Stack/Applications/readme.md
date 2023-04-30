@@ -6,7 +6,7 @@
 
 1. `(` : Push into Stack
 2. `Operand` : Print it
-3. `)` : Keep popping from stack and print untill `)` is found.
+3. `)` : Keep popping from stack and print untill `(` is found.
 4. `Operator` : If the Stack is Empty, Push it
 Else:
     - Compare with the top operator in Stack
