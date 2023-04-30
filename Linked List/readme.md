@@ -1,18 +1,22 @@
-<h1> Linked List <h1>
+# Linked Lists in C++
+This is a detailed guide on implementing linked lists in C++. A linked list is a data structure used to store a collection of elements. It consists of a series of nodes, where each node contains a value and a pointer to the next node in the list. Linked lists are a dynamic data structure, which means that they can grow or shrink as needed.
 
-A linked list is a `Linear` data structure that consists of a `series of nodes`, each of which contains `data` and a `reference` to the next node. The first node in the list is called the `head`, and the last node is called the `tail`.
+# Types of Linked ListsThere are several types of linked lists, including:
 
-In simple words, a linked list consists of `nodes` where each `node` contains a `Data Field` and a `Reference` to the nest `node` in that list.
+* Singly linked list
+* Doubly linked list
+* Circular linked list
 
+# Singly Linked List
 
-Linked lists are also used to implement graphs. A graph is a data structure that consists of a set of vertices and a set of edges. The vertices represent objects, and the edges represent relationships between objects.
+A singly linked list is a type of linked list in which each node contains a value and a pointer to the next node in the list. The last node in the list points to a null value.
 
-IMG
+![alt text](https://github.com/taahahussainkhan/Data-Structures-and-Algorithms-CPP/blob/main/Assets/Data.png)
  
+# Doubly Linked List
 
-* Each node in the list consists of two parts
-    * Data.
-    * Reference /Link to the next node.
+A doubly linked list is a type of linked list in which each node contains a value, a pointer to the next node, and a pointer to the previous node in the list. The first node in the list points to a null value for the previous node, and the last node points to a null value for the next node.
 
-# Advantages
+# Circular Linked List
 
+A circular linked list is a type of linked list in which the last node points to the first node in the list. This creates a circular structure.
