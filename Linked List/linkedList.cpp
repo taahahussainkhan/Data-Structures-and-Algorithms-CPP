@@ -1,49 +1,91 @@
 #include <iostream>
 using namespace std;
-class Node
+class node
 {
 public:
-    int key;
     int data;
-    Node *next;
-    Node()
+    node *next;
+    node(int value)
     {
-        key = 0;
-        data = 0;
+        data = value;
         next = NULL;
     }
-    Node(int key, int data)
-    {
-        this->key = key;
-        this->data = data;
-    }
 };
-class SinglyLinkedList
+void insertAtTail(node *&head, int val)
 {
-public:
-    Node *head;
-    SinglyLinkedList()
+    node *n = new node(val);
+    if (head == NULL)
     {
-        head = NULL ;
+        head = n;
+        return;
     }
-    SinglyLinkedList(Node *n)
+    node *temp = head;
+    while (temp->next != NULL)
     {
-        this->head = n ;
+        temp = temp->next;
     }
-    Node nodeExists(int k)
+    temp->next = n;
+}
+void insertAtHead(node *&head, int val)
+{
+    node *n = new node(val);
+    n->next = head;
+    head = n;
+}
+void display(node *head)
+{
+    node *temp = head;
+    while (temp != NULL)
     {
-        Node* temp = NULL;
-        Node* ptr = head;
-        while (ptr != NULL)
+        cout << temp->data << " -> ";
+        temp = temp->next;
+    }
+    cout << " NULL " << endl;
+}
+bool search(node *head, int key)
+{
+    node *temp = head;
+    while (temp != NULL)
+    {
+        if (temp->data == key)
         {
-             if (ptr->key == k)
-             {
-                temp = ptr ; 
-             }
+            return true;
         }
+        temp = temp->next;
     }
-
-};
+    return false;
+}
 int main()
 {
+    node *head = NULL;
+    int no_of_nodes, value;
+    cout << "Number of Nodes: ";
+    cin >> no_of_nodes;
+    for (int i = 0; i <= no_of_nodes; i++)
+    {
+        char insert;
+        cout << "Where do you want ot insert value? ";
+        cout << "h/H OR t/T" << endl;
+        cin >> insert;
+        if (insert == 't' || insert == 'T')
+        {
+            cout << "Value : ";
+            cin >> value;
+            insertAtTail(head, value);
+        }
+        else if (insert == 'h' || insert == 'H')
+        {
+            cout << "Value : ";
+            cin >> value;
+            insertAtTail(head, value);
+        }
+    }
+    display(head);
+    int key;
+    cout << "Value to search: ";
+    cin >> key;
+    if( search(head, key))
+        cout << key << " Found" << endl;
+    else 
+    cout << key <<" Not Found " << endl ;
 }
