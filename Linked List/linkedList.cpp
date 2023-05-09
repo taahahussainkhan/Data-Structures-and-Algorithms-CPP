@@ -82,7 +82,39 @@ void deletion(node *&head, int val)
     temp->next = temp->next->next;
     delete toDelete;
 }
+node* reverse (node* head)
+{
+    node* current = head;
+    node* previous = NULL;
+    node* nextptr ;
+    while(current != NULL)
+    {
+        nextptr = current->next;
+        current-> next =previous;
+        previous = current;
+        current = nextptr;
+    }
+    return previous;  //new head
+}
+void midValue(node* head)
+{
+  if (head == NULL)
+    {
+        cout << "List is empty." << endl;
+        return;
+    }
 
+    node* slow = head;
+    node* fast = head;
+
+    while (fast != NULL && fast->next != NULL)
+    {
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+
+    cout << "Mid value: " << slow->data << endl;
+}
 int main()
 {
     node *head = NULL;
@@ -91,24 +123,25 @@ int main()
     cin >> no_of_nodes;
     for (int i = 0; i < no_of_nodes; i++)
     {
-        char insert;
-        cout << "Where do you want ot insert value? ";
-        cout << "h/H OR t/T" << endl;
-        cin >> insert;
-        if (insert == 't' || insert == 'T')
-        {
-            cout << "Value : ";
-            cin >> value;
+      //  char insert;
+       // cout << "Where do you want ot insert value? ";
+     //   cout << "h/H OR t/T" << endl;
+       // cin >> insert;
+        //if (insert == 't' || insert == 'T')
+       // {
+           cout << "Value : ";
+         cin >> value;
             insertAtTail(head, value);
-        }
-        else if (insert == 'h' || insert == 'H')
-        {
-            cout << "Value : ";
-            cin >> value;
-            insertAtTail(head, value);
-        }
+   //     }
+        //else if (insert == 'h' || insert == 'H')
+       // {
+         //   cout << "Value : ";
+       //     cin >> value;
+        //    insertAtTail(head, value);
+       // }
     }
     display(head);
+    midValue(head);
     int key, toDel;
     char oper;
     do
@@ -116,6 +149,7 @@ int main()
         cout << "Operations" << endl;
         cout << "Search S/s" << endl;
         cout << "Deletion D/d" << endl;
+        cout << "Reverse R/r" << endl;
         cin >> oper;
         if (oper == 'S' || oper == 's')
         {
@@ -132,6 +166,12 @@ int main()
             cin >> toDel;
             deletion(head, toDel);
             display(head);
+        }
+        else if (oper == 'R' || oper == 'r')
+        {
+            node* newhead = reverse(head);
+
+            display(newhead);
         }
         else
             exit(0);
