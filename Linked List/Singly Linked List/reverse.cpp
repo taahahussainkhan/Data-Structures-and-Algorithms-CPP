@@ -51,10 +51,11 @@ node *reverse(node *head)
     {
         nextptr = current->next;
         current->next = previous;
+
         previous = current;
         current = nextptr;
     }
-    return previous; // new head
+    return previous; // It is returning new head.
 }
 int main()
 {
