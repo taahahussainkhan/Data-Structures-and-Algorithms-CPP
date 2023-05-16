@@ -1,1 +1,7 @@
-((a+b-c)*d^e^f)/g
+for(int i=0;i<prefix.length();i++)
+    // {
+    //     if(prefix[i]==')')
+    //         prefix[i]='(';
+    //     else if(prefix[i]=='(')
+    //         prefix[i]=')';
+    // }
