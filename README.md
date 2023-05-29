@@ -6,7 +6,7 @@ This repository contains my solutions to various data structures and algorithms 
 - [Arrays](#arrays)
 - [Linked Lists](#linked-lists)
 - [Stacks](#stacks)
-- [Queues](#queues)
+- [Queues]([#queues](https://github.com/taahahussainkhan/Data-Structures-and-Algorithms-CPP/tree/main/Queue))
 - [Trees](#trees)
 - [Graphs](#graphs)
 
