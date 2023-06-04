@@ -1,5 +1,7 @@
 #include<iostream>
 #include<stack>
+#include<string>
+#include<math.h>
 using namespace std;
 
 bool isOperator(char c)
@@ -89,7 +91,43 @@ string InfixToPostfix(stack<char> s, string infix)
 	
 	return postfix;
 }
-
+int evaluate(string postfix)
+{
+    stack<int> s;
+    for (int i = 0; i < postfix.length(); i++)
+    {
+        if (postfix[i] >= '0' && postfix[i] <= '9')
+            s.push(postfix[i] - '0');
+        else
+        {
+            int op2 = s.top();
+            s.pop();
+            int op1 = s.top();
+            s.pop();
+            switch (postfix[i])
+            {
+            case '+':
+                s.push(op1 + op2);
+                break;
+            case '-':
+                s.push(op1 - op2);
+                break;
+            case '*':   
+                s.push(op1 * op2);
+                break;  
+            case '/':   
+                s.push(op1 / op2);
+                break;  
+            case '^':
+                s.push(pow(op1, op2));
+                break;
+            default:
+                break;
+            }
+        }
+    }
+    return s.top();
+}
 int main() 
 {  
 
@@ -100,5 +138,6 @@ int main()
 	cout<<"INFIX EXPRESSION: "<<infix_exp<<endl;
   	postfix_exp = InfixToPostfix(stack, infix_exp);
   	cout<<endl<<"POSTFIX EXPRESSION: "<<postfix_exp;
+	cout << "Evaluation: "<<evaluate("46+2/5*7+");
 	  
 }
