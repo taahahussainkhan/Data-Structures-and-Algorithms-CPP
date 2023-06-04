@@ -44,4 +44,10 @@ int main()
         cout << arr1[i] << " ";
     }
     cout << endl;
+
+    for(int x:arr1) // For each loop
+    {
+        cout << x << " ";
+    }
+    cout << endl;
 }
