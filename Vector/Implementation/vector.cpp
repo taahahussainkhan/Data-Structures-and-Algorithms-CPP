@@ -48,31 +48,35 @@ class vector
             cs--;
         }
     }
-    bool isEmpty()
+    bool isEmpty()const // const is used so that the function cannot change the value of cs
     {
         return cs == 0;
     }
     //Front, Back, At(i), []
 
-    int front()
+    int front()const
     {
         return arr[0];
     }
-    int back()
+    int back() const
     {
         return arr[cs-1];
     }
-    int at(int i)
+    int at(int i) const
     {
         return arr[i];
     }
-    int size()
+    int size() const
     {
         return cs;
     }
-    int capacity()
+    int capacity()const
     {
         return ms;
+    }
+    int operator[](const int i)
+    {
+        return arr[i];
     }
 
 };
@@ -86,4 +90,16 @@ int main()
     v.push_back(10);
     cout <<v.size() << endl;
     cout << v.capacity() << endl;
+    cout<<"First element "<<v.front()<<endl;
+    cout<<"Last element "<<v.back()<<endl;
+    cout<<"Element at 2nd index "<<v.at(2)<<endl;
+    for(int x=0 ;x < v.size();x++)
+    {
+        cout << v.at(x) << " ";
+    }
+    cout << "\nUsing operator overloading " << endl;
+    for(int x=0 ;x< v.size();x++)
+    {
+        cout << v[x] << " ";
+    }
 }
