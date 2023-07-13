@@ -19,17 +19,24 @@ void insertAtHead(Node* &head,int data) // passing head by reference because we 
 }
 void insertAtTail(Node* &head,int data)
 {
-    if(head == NULL)
+    Node* n = new Node(data);
+    if (head == NULL)
     {
-        insertAtHead(head,data);
+        head = n;
         return;
     }
-    
+    Node* temp = head;
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+
+    temp->next = n;
 }
-void print(Node* &head)
+void display(Node* &head)
 {
     Node* temp = head;
-    if (temp != NULL)
+    while (temp != NULL)
     {
         cout << temp->data << " ";
         temp = temp->next;
@@ -37,6 +44,10 @@ void print(Node* &head)
 }
 int main()
 {
-    cout<<"Hello World";
+    Node* head = NULL;
+    insertAtHead(head,0);
+    insertAtTail(head,1);
+    insertAtTail(head,2);
+    display(head);
     return 0;
 }
