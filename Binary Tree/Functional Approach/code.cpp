@@ -1,9 +1,10 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-class Node{
+class Node
+{
 public:
-    Node* left;
-    Node* right;
+    Node *left;
+    Node *right;
     int data;
     Node(int data)
     {
@@ -11,34 +12,59 @@ public:
         left = right = NULL;
     }
 };
-void preorder(Node* root)
+void preorder(Node *root)
 {
-    if (root ==NULL)return;
-    cout<<root->data<<" ";
+    if (root == NULL)
+    {
+        return;
+    }
+    cout << root->data << " ";
     preorder(root->left);
     preorder(root->right);
 }
-void inorder(Node* root)
+void inorder(Node *root)
 {
-    if (root ==NULL)return;
+    if (root == NULL)
+    {
+        return;
+    }
     inorder(root->left);
-    cout<<root->data<<" ";
+    cout << root->data << " ";
     inorder(root->right);
 }
-void postorder(Node* root)
+void postorder(Node *root)
 {
-    if (root ==NULL)return;
+    if (root == NULL)
+    {
+        return;
+    }
     postorder(root->left);
     postorder(root->right);
-    cout<<root->data<<" ";
+    cout << root->data << " ";
+}
+int numberOfNodes(Node* root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+    return (numberOfNodes(root->left)+numberOfNodes(root->right)+1);
+}
+int sumOfNodes(Node* root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+    return (sumOfNodes(root->left)+sumOfNodes(root->right)+root->data);
 }
 int main()
 {
-    Node* root = new Node(1);
+    Node *root = new Node(1);
     root->left = new Node(2);
     root->left->left = new Node(4);
     root->left->right = new Node(5);
-    root->right  = new Node(3);
+    root->right = new Node(3);
     root->right->left = new Node(6);
     root->right->right = new Node(7);
     cout << "Preorder Traversal: ";
@@ -47,4 +73,7 @@ int main()
     inorder(root);
     cout << "\nPostorder Traversal: ";
     postorder(root);
+    cout << endl << endl ;
+    cout << "Number of Nodes: " << numberOfNodes(root) << endl;
+    cout << "Sum of Nodes: " << sumOfNodes(root) << endl;
 }
