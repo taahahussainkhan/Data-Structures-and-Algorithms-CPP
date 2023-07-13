@@ -51,7 +51,6 @@ void display(Node* head)
         cout<<temp->data<<" ";
         temp = temp->next;
     } while (temp!=head);
-    
 }
 int main()
 {
