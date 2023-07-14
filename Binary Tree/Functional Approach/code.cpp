@@ -58,6 +58,30 @@ int sumOfNodes(Node* root)
     }
     return (sumOfNodes(root->left)+sumOfNodes(root->right)+root->data);
 }
+int height(Node* root)
+{
+    if(root == NULL)
+    {
+        return 0;
+    }
+    int leftHeight = height(root->left);
+    int rightHeight = height(root->right);
+    return (max(leftHeight,rightHeight)+1);
+}
+int diameter(Node* root)
+{
+    if(root == NULL)
+    {
+        return 0;
+    }
+    int leftHeight = height(root->left);
+    int rightHeight = height(root->right);
+    int currentDiameter = leftHeight + rightHeight + 1;
+    int leftDiameter = diameter(root->left);
+    int rightDiameter = diameter(root->right);
+    return (max(currentDiameter,max(leftDiameter,rightDiameter)));
+
+}
 int main()
 {
     Node *root = new Node(1);
@@ -76,4 +100,6 @@ int main()
     cout << endl << endl ;
     cout << "Number of Nodes: " << numberOfNodes(root) << endl;
     cout << "Sum of Nodes: " << sumOfNodes(root) << endl;
+    cout << "Height of Tree: " << height(root) << endl;
+    cout << "Diameter of Tree: " << diameter(root) << endl;
 }

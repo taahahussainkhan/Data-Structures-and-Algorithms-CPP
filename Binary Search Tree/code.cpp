@@ -28,6 +28,27 @@ Node* insertBST(Node* root,int data)
     }
     return root;
 }
+Node* search(Node* root,int key)
+{
+    if(root == NULL){
+        return NULL;
+    }
+    if(root->data == key)
+    {
+        return root;
+    }
+    if(root->data>key)
+    {
+        return search(root->left,key);
+    }
+    return search(root->right,key);
+
+}
+Node* deleteNode(Node* root,int key)
+{
+    
+
+}
 void inorder(Node* root)
 {
     if(root == NULL)
@@ -48,6 +69,15 @@ int main()
     insertBST(root,2);
     insertBST(root,7);
     inorder(root);
+    if (search(root, 1) == NULL){
+        cout << "\nKey Not Found";
+    }
+    else{
+        cout << "\nKey Found";
+    }
+    deleteNode(root,1);
+    inorder(root);
     return 0;
+
 
 }

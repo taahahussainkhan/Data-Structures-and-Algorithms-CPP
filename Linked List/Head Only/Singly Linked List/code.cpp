@@ -71,7 +71,7 @@ int main()
     insertAtTail(head,2);
     insertAtTail(head,6);
     insertAtTail(head,9);
-    cout << "insertAtTail(head,1)\n insertAtTail(head,2)\ninsertAtTail(head,6)\ninsertAtTail(head,9)" << endl ;
+    cout << "insertAtTail(head,1)\ninsertAtTail(head,2)\ninsertAtTail(head,6)\ninsertAtTail(head,9)" << endl ;
     display(head);
     cout << endl;
     cout << "insertAtHead(head,0)" << endl ;
